@@ -16,7 +16,7 @@ user=$(basename $HOME)
 cd
 mkdir ~/${user}website/
 source ~/.profile
-hugo new ~/${user}website/
+hugo new site ~/${user}website/
 cd
 cd ~/${user}website/
 git init
