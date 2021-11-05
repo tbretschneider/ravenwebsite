@@ -31,6 +31,5 @@ EOF
 cd ~/${user}website/
 hugo new posts/initialpost.md
 sleep 5s 
-initialpost="~/${user}website/content/posts/initialpost.md"
-cat "~/ravenwebsite/initialpost.md" >> $initialpost
+cat "~/ravenwebsite/initialpost.md" >> ~/${user}website/content/posts/initialpost.md
 hugo -D 
