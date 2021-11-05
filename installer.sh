@@ -26,10 +26,10 @@ baseURL = "https://users.ox.ac.uk/~${user}/"
 languageCode = "en-uk"
 title = "My Website"
 theme = "ananke"
-publishdir = "${HOME}/public_html/"
+publishdir = "${HOME}/cgi/"
 EOF
 cd ~/${user}website/
 hugo new posts/initialpost.md
 sleep 5s 
-cat "~/ravenwebsite/initialpost.md" >> ~/${user}website/content/posts/initialpost.md
+cat ${HOME}/ravenwebsite/initialpost.md >> ~/${user}website/content/posts/initialpost.md
 hugo -D 
