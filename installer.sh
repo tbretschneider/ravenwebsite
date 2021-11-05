@@ -26,7 +26,7 @@ baseURL = "https://users.ox.ac.uk/~${user}/"
 languageCode = "en-uk"
 title = "My Website"
 theme = "ananke"
-publishdir = "${HOME}/cgi/"
+publishdir = "${HOME}/public_html/"
 EOF
 cd ~/${user}website/
 hugo new posts/initialpost.md
