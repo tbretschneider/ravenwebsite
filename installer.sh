@@ -15,7 +15,7 @@ tar -xzvf ~/bin/${zipfile}
 user=$(basename $HOME)
 mkdir ~/${user}website/
 source ~/.profile
-hugo new "~/${user}website" -b "https://users.ox.ac.uk/~${user}/"
+hugo new ~/${user}website/ -b "https://users.ox.ac.uk/~${user}/"
 cd "~/${user}website"
 git init
 git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
