@@ -18,7 +18,7 @@ mkdir ~/${user}website/
 source ~/.profile
 hugo new ~/${user}website/ -b "https://users.ox.ac.uk/~${user}/"
 cd
-cd "~/${user}website"
+cd ~/${user}website/
 git init
 git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
 cat > ~/${user}website/config.toml << EOF
