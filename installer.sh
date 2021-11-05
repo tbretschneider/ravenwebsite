@@ -31,13 +31,138 @@ case "$1" in
 	4) git submodule add https://github.com/zwbetz-gh/cupper-hugo-theme.git themes/cupper-hugo-theme
 	 theme="cupper-hugo-theme";;	
 esac
-cat > ~/${user}website/config.toml << EOF
-baseURL = "https://users.ox.ac.uk/~${user}/"
-languageCode = "en-uk"
-title = "My Website"
-theme = "${theme}"
-publishdir = "${HOME}/public_html/"
+firstname=$2
+secondname=$3
+cat > ~/${user}website/config.yaml << EOF
+baseURL: "https://users.ox.ac.uk/~${user}/"
+title: ${firstname}'s Website
+paginate: 5
+theme: PaperMod
+publishdir: ${HOME}/public_html/
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+    disableXML: true
+    minifyOutput: true
+
+params:
+    env: production # to enable google analytics, opengraph, twitter-cards and schema.
+    title: ${firstname}'s Website
+    description: "This is my blog post."
+    keywords: [Blog, Portfolio, PaperMod]
+    author: ${firstname} ${secondname}
+    # author: ["Me", "You"] # multiple authors
+    images: ["https://www.ballioljcr.org/sites/default/files/BUMS-logo-hoodie_0.png"]
+    DateFormat: "January 2, 2006"
+    defaultTheme: auto # dark, light
+    disableThemeToggle: false
+
+    ShowReadingTime: true
+    ShowShareButtons: true
+    ShowPostNavLinks: true
+    ShowBreadCrumbs: true
+    ShowCodeCopyButtons: false
+    disableSpecial1stPost: false
+    disableScrollToTop: false
+    comments: true
+    hidemeta: false
+    hideSummary: false
+    showtoc: true
+    tocopen: true
+
+    assets:
+        # disableHLJS: true # to disable highlight.js
+        # disableFingerprinting: true
+        favicon: "https://www.ballioljcr.org/sites/default/files/favicon.ico"
+        favicon16x16: "<link / abs url>"
+        favicon32x32: "<link / abs url>"
+        apple_touch_icon: "<link / abs url>"
+        safari_pinned_tab: "<link / abs url>"
+
+    label:
+        text: "Home"
+        icon: /apple-touch-icon.png
+        iconHeight: 35
+
+    # profile-mode
+    profileMode:
+        enabled: true # needs to be explicitly set
+        title: ${firstname}'s Website
+        subtitle: "This is my blog."
+        imageUrl: "https://www.ballioljcr.org/sites/default/files/BUMS-logo-hoodie_0.png"
+        imageWidth: 120
+        imageHeight: 120
+        imageTitle: Balliol Maths Soc
+        buttons:
+            - name: Posts
+              url: posts
+            - name: Tags
+              url: tags
+            - name: Matrix
+              url: https://chat.cs.ox.ac.uk
+
+    # home-info mode
+    homeInfoParams:
+        Title: "Hi, there user"
+        Content: Welcome to my blog
+
+    socialIcons:
+        - name: twitter
+          url: "https://twitter.com/"
+        - name: stackoverflow
+          url: "https://stackoverflow.com"
+        - name: github
+          url: "https://github.com/"
+
+    cover:
+        hidden: true # hide everywhere but not in structured data
+        hiddenInList: true # hide on list pages and home
+        hiddenInSingle: true # hide on single page
+
+    editPost:
+        URL: "https://github.com/<path_to_repo>/content"
+        Text: "Suggest Changes" # edit text
+        appendFilePath: true # to append file path to Edit link
+
+    # for search
+    # https://fusejs.io/api/options.html
+    fuseOpts:
+        isCaseSensitive: false
+        shouldSort: true
+        location: 0
+        distance: 1000
+        threshold: 0.4
+        minMatchCharLength: 0
+        keys: ["title", "permalink", "summary", "content"]
+menu:
+    main:
+        - identifier: categories
+          name: categories
+          url: /categories/
+          weight: 10
+        - identifier: tags
+          name: tags
+          url: /tags/
+          weight: 20
+        - identifier: example
+          name: example.org
+          url: https://example.org
+          weight: 30
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+# pygmentsUseClasses: true
+# markup:
+#     highlight:
+#         # anchorLineNos: true
+#         codeFences: true
+#         guessSyntax: true
+#         lineNos: true
+#         style: monokai
 EOF
+rm ~/${user}website/config.toml
 cd ~/${user}website/
 hugo new posts/initialpost.md
 sleep 5s 
