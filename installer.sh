@@ -30,7 +30,7 @@ publishdir = "~/public_html/"
 EOF
 cd ~/${user}website/
 hugo new posts/initialpost.md
-sleep 
+sleep 5s 
 initialpost="~/${user}website/content/posts/initialpost.md"
 cat "~/ravenwebsite/initialpost.md" >> $initialpost
 hugo -D 
