@@ -20,7 +20,7 @@ cd "~/${user}website"
 git init
 git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
 cat > ~/${user}website/config.toml << EOF
-baseURL = "https://users.ox.ac.uk/~${user}"
+baseURL = "https://users.ox.ac.uk/~${user}/"
 languageCode = "en-uk"
 title = "My Website"
 theme = "ananke"
