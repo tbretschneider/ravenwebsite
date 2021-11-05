@@ -10,7 +10,7 @@ echo $pubkey >> ~/.ssh/authorized_keys
 chmod 700 ~/.ssh
 chmod 700 ~/.ssh/authorized_keys
 mkdir ~/bin
-mv ~/ravenwebsite/${zipfile} ~/bin/
+cp ~/ravenwebsite/${zipfile} ~/bin/
 cd ~/bin
 tar -xzvf ~/bin/${zipfile}
 user=$(basename $HOME)
@@ -28,6 +28,8 @@ case "$1" in
 	theme="terminal";;
 	3) git submodule add https://github.com/athul/archie.git themes/archie
 	theme="archie";;
+	4) git submodule add https://github.com/zwbetz-gh/cupper-hugo-theme.git themes/cupper-hugo-theme
+	 theme="cupper-hugo-theme";;	
 esac
 cat > ~/${user}website/config.toml << EOF
 baseURL = "https://users.ox.ac.uk/~${user}/"
