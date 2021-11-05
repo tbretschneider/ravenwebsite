@@ -14,6 +14,7 @@ cd ~/bin
 tar -xzvf ~/bin/${zipfile}
 user=$(basename $HOME)
 mkdir "~/${user}website"
+source ~/.profile
 hugo new "~/${user}website" -b "https://users.ox.ac.uk/~${user}/"
 cd "~/${user}website"
 git init
