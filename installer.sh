@@ -28,6 +28,7 @@ title = "My Website"
 theme = "ananke"
 publishdir = "~/public_html/"
 EOF
+cd ~/${user}website/
 hugo new posts/initialpost.md
 sleep 
 initialpost="~/${user}website/content/posts/initialpost.md"
