@@ -104,6 +104,8 @@ params:
               url: tags
             - name: Matrix
               url: https://chat.cs.ox.ac.uk
+            - name: My Matrix
+              url: https://matrix.to/#/@${firstname}.${secondname}:cs.ox.ac.uk
 
     # home-info mode
     homeInfoParams:
