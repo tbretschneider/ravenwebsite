@@ -85,7 +85,7 @@ params:
 
     label:
         text: "Home"
-        icon: /apple-touch-icon.png
+        icon: logogoeshere
         iconHeight: 35
 
     # profile-mode
@@ -100,9 +100,7 @@ params:
         buttons:
             - name: Posts
               url: posts
-            - name: Tags
-              url: tags
-            - name: Matrix
+            - name: Oxford Matrix
               url: https://chat.cs.ox.ac.uk
             - name: My Matrix
               url: https://matrix.to/#/@${firstname}.${secondname}:cs.ox.ac.uk
@@ -113,12 +111,10 @@ params:
         Content: Welcome to my blog
 
     socialIcons:
-        - name: twitter
-          url: "https://twitter.com/"
-        - name: stackoverflow
-          url: "https://stackoverflow.com"
-        - name: github
-          url: "https://github.com/"
+        - name: matrix
+          url: "https://matrix.to/#/@${firstname}.${secondname}:cs.ox.ac.uk"
+        - name: email
+          url: "mailto:${firstname}.${secondname}@balliol.ox.ac.uk"
 
     cover:
         hidden: true # hide everywhere but not in structured data
@@ -142,17 +138,9 @@ params:
         keys: ["title", "permalink", "summary", "content"]
 menu:
     main:
-        - identifier: categories
-          name: categories
-          url: /categories/
-          weight: 10
-        - identifier: tags
-          name: tags
-          url: /tags/
-          weight: 20
-        - identifier: example
-          name: example.org
-          url: https://example.org
+        - identifier: chat.ox.ac.uk
+          name: chat.ox.ac.uk
+          url: https://chat.ox.ac.uk
           weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
