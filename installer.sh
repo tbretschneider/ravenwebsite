@@ -49,6 +49,12 @@ minify:
     disableXML: true
     minifyOutput: true
 
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
+
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
     title: ${firstname}'s Website
@@ -142,6 +148,14 @@ menu:
           name: chat.ox.ac.uk
           url: https://chat.ox.ac.uk
           weight: 30
+        - identifier: search
+          name: search
+          url: search
+          weight: 30
+        - identifier: rss
+          name: RSS
+          url: index.xml
+          weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
 # markup:
@@ -151,6 +165,15 @@ menu:
 #         guessSyntax: true
 #         lineNos: true
 #         style: monokai
+EOF
+cat > ~/${user}website/content/search.md << EOF
+---
+title: "Search" # in any language you want
+layout: "search" # is necessary
+# url: "/archive"
+# description: "Description for Search"
+summary: "search"
+---
 EOF
 rm ~/${user}website/config.toml
 cd ~/${user}website/
